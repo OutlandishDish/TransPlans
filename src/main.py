@@ -1,4 +1,13 @@
 
+                                        # TODO: Implement dynamic centering using screen().availableGeometry()
+                                        # TODO: Add mousePressEvent/mouseMoveEvent for borderless dragging
+                                        # TODO: Refactor day columns into 1-hour QLineEdit/QTextEdit blocks
+                                        # TODO: Create a date-based naming convention for tasks.json for history
+                                        # TODO: Explore PyInstaller for creating a standalone Windows executable
+                                        # TODO: Increase day label and task font sizes
+
+
+
 # import sys
 # from PyQt6.QtWidgets import QApplication
 
@@ -121,4 +130,8 @@ if __name__ == "__main__":                    # This checks if the script is bei
     app = QApplication(sys.argv)             # Creates an instance of the QApplication class, which is necessary for any PyQt application. It takes command-line arguments (sys.argv) to allow for any command-line options that might be passed when running the script.   
     window = AeroPlanner()                    # Creates an instance of the AeroPlanner class, which initializes the window and its contents   
     sys.exit(app.exec())                     # Starts the application's event loop, allowing the GUI to be responsive and interactive. The sys.exit() ensures that the application exits cleanly when the event loop is terminated.
+
+
+
+
 
