@@ -88,16 +88,17 @@ class AeroPlanner(QWidget):        # Creates a new class called AeroPlanner that
             # Finally, put the Stack into the Main Tray
             main_layout.addLayout(column)
 
-        # 4. Tell the Window to use this 'Main Tray'
-        self.setLayout(main_layout)
-        
-        # Set a wide size (Width: 1100, Height: 400)
-        self.setGeometry(100, 100, 1100, 400)
-        self.show()    
-
-# The "Standard" Python Entry Point
+            # 4. Tell the Window to use this 'Main Tray'
+            self.setLayout(main_layout)
+            
+            # Set a wide size (Width: 1100, Height: 400)
+            self.setGeometry(100, 100, 1100, 400)
+            self.show()
+    
+           
+    # The "Standard" Python Entry Point
 if __name__ == "__main__":                    # This checks if the script is being run directly (as the main program) rather than imported as a module in another script. If this condition is true, the code inside this block will be executed.
     app = QApplication(sys.argv)             # Creates an instance of the QApplication class, which is necessary for any PyQt application. It takes command-line arguments (sys.argv) to allow for any command-line options that might be passed when running the script.   
     window = AeroPlanner()                    # Creates an instance of the AeroPlanner class, which initializes the window and its contents   
-    sys.exit(app.exec())                  # Starts the application's event loop, allowing the GUI to be responsive and interactive. The sys.exit() ensures that the application exits cleanly when the event loop is terminated.
+    sys.exit(app.exec())                     # Starts the application's event loop, allowing the GUI to be responsive and interactive. The sys.exit() ensures that the application exits cleanly when the event loop is terminated.
 
