@@ -7,6 +7,7 @@
 
 
 import sys
+import json
 from PyQt6.QtWidgets import QApplication, QWidget, QLabel, QVBoxLayout, QTextEdit, QHBoxLayout
 from PyQt6.QtCore import Qt
 
@@ -70,7 +71,7 @@ class AeroPlanner(QWidget):        # Creates a new class called AeroPlanner that
             
             # Create the Day Header
             day_label = QLabel(day)
-            day_label.setStyleSheet("font-weight: bold; color: #00ADB5;")
+            day_label.setStyleSheet("font-weight: bold; color: #000000;")
             day_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
             
             # Create the Text Entry box
@@ -92,8 +93,27 @@ class AeroPlanner(QWidget):        # Creates a new class called AeroPlanner that
             self.setLayout(main_layout)
             
             # Set a wide size (Width: 1100, Height: 400)
-            self.setGeometry(100, 100, 1100, 400)
+            self.setGeometry(1370, 100, 1100, 400)
             self.show()
+
+    def save_tasks(self):
+        # We create a dictionary to map the day to the text
+        data = {}
+        days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+        
+        # We loop through our stored widgets and grab the text from each
+        for i, widget in enumerate(self.task_widgets):                      # Loops through the list of task widgets (text editors) and their corresponding day index (i) using enumerate()
+            data[days[i]] = widget.toPlainText()
+        
+        # This creates 'tasks.json' in your project folder
+        with open("tasks.json", "w") as f:
+            json.dump(data, f, indent=4)
+        
+        print("Flight plan saved to tasks.json!")       
+
+    def closeEvent(self, event):
+        self.save_tasks()  # Run the save logic
+        event.accept()     # Allow the window to close 
     
            
     # The "Standard" Python Entry Point
