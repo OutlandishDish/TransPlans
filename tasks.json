@@ -1,9 +1,15 @@
 {
-    "Mon": "",
-    "Tue": "",
-    "Wed": "",
-    "Thu": "",
-    "Fri": "",
-    "Sat": "",
-    "Sun": ""
+    "geometry": {
+        "x": 2827,
+        "y": 5
+    },
+    "tasks": {
+        "Mon": "test\n",
+        "Tue": "",
+        "Wed": "",
+        "Thu": "Python\n  ing\n  trans\n  pygame\n  datacamp\n\niracing\n  f1600\n\nRide",
+        "Fri": "",
+        "Sat": "",
+        "Sun": ""
+    }
 }
